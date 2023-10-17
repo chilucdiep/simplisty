@@ -8,9 +8,9 @@ Simplisty is a small React component library with various reusable components. I
 To install this library, you can use npm or yarn.
 
 ```bash
-npm install your-component-library
+npm install simplisty
 # or
-yarn add your-component-library
+yarn add simplisty
 ```
 
 # Components
@@ -29,28 +29,74 @@ The Button component is designed for various user interface interactions. It off
 
 ### Usage
 
-#### Props
+**Props**
 
-|Prop	|Type	|Description
-|----------|:-------------:|------:|
-|label	|string	|The label text to display on the button.
-|disabled	|boolean	|Determines if the button is disabled.
-|variant	|"primary" or "secondary"	|Sets the visual variant of the button.
-|onClick	|(e: React.MouseEvent) => void (optional)	|A callback function to handle button clicks.
+| Prop         | Type                                      | Default             | Description                                      |
+| ------------ | ----------------------------------------- | ------------------- | ------------------------------------------------ |
+| `label`      | `string`                                  | N/A                 | The label text to display on the button.        |
+| `disabled`   | `boolean`                                 | `false`             | Determines if the button is disabled.           |
+| `variant`    | `"primary"` or `"secondary"`              | `"secondary"`       | Sets the visual variant of the button.           |
+| `onClick`    | `(e: React.MouseEvent) => void` (optional) | N/A                 | A callback function to handle button clicks.     |
 
+
+#### Example 1: Default Button
+
+This example demonstrates a default Button with no additional props.
+
+<img width="145" alt="Default Button" src="https://github.com/chilucdiep/simplisty/assets/43826291/6e18229e-6bd0-4aad-aa4d-bf18805db0cc">
+
+**Code Example:**
 
 ```jsx
 import React from 'react';
-import { Button } from 'your-component-library'; // Replace 'your-component-library' with the correct import path.
+import { Button } from 'your-component-library';
 
 function MyComponent() {
-  const handleClick = () => {
-    alert('Button clicked!');
-  }
-
   return (
     <div>
-      <Button label="Click me" onClick={handleClick} />
+      <Button label="Click me" />
+    </div>
+  );
+}
+```
+
+#### Example 2: Primary Button
+
+This example shows a Button with the variant prop set to "primary."
+
+<img width="164" alt="Primary Button" src="https://github.com/chilucdiep/simplisty/assets/43826291/be3b770f-8231-4603-aa01-adec16275c92">
+
+**Code Example:**
+
+```jsx
+import React from 'react';
+import { Button } from 'your-component-library';
+
+function MyComponent() {
+  return (
+    <div>
+      <Button label="Click me" variant="primary" />
+    </div>
+  );
+}
+```
+
+#### Example 3: Disabled Button
+
+This example illustrates a disabled Button.
+
+<img width="170" alt="SDisabled Button" src="https://github.com/chilucdiep/simplisty/assets/43826291/088335d4-fc67-4371-90a9-2bc4c70685e5">
+
+**Code Example:**
+
+```jsx
+import React from 'react';
+import { Button } from 'your-component-library';
+
+function MyComponent() {
+  return (
+    <div>
+      <Button label="Click me" disabled />
     </div>
   );
 }
