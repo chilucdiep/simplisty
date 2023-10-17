@@ -1,0 +1,19 @@
+body,
+* {
+  --background-color: #f7f7f7;
+  --border-color: #dddddd;
+  --container-padding: 6px 20px;
+  --hover-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  --main-color: rgb(34, 34, 34);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: var(--main-color);
+  box-sizing: border-box;
+}
+
+.Sum {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}

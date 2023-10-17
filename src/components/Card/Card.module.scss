@@ -1,0 +1,60 @@
+body,
+* {
+  --background-color: #f7f7f7;
+  --border-color: #dddddd;
+  --container-padding: 6px 20px;
+  --hover-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  --main-color: rgb(34, 34, 34);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: var(--main-color);
+  box-sizing: border-box;
+}
+
+@mixin Box-Styling() {
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+}
+
+.Card {
+  background-color: white;
+  @include Box-Styling();
+}
+
+.Header {
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.TitleSection {
+  display: grid;
+  gap: 8px;
+  padding: 24px 0;
+}
+
+.Title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.Side {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+  }
+
+.Subtitle {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.Main {
+  padding: 24px;
+}
