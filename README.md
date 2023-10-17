@@ -1,6 +1,6 @@
 # Simplisty
 
-Simplisty is a small React component library with various reusable components. It was created to refresh React skills while applying best practices in JavaScript, TypeScript, and clean code.
+Simplisty is a small React component library with various reusable components. It was created to enable developers to easily build clean, simple & minimalist UI's without a lot of design and CSS pain points.
 
 
 # Installation
@@ -21,7 +21,7 @@ yarn add simplisty
 4. [Card](#card)
 5. [Counter](#counter)
 
-## Button
+## <a name="button"></a>Button
 
 The Button component is designed for various user interface interactions. It offers customization options for labels, disabled state, and visual variants.
 
