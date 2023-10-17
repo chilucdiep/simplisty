@@ -21,9 +21,9 @@ yarn add simplisty
 4. [Card](#card)
 5. [Counter](#counter)
 
-## <a name="button"></a>Button
+## <a name="button"></a>Button Component
 
-The Button component is designed for various user interface interactions. It offers customization options for labels, disabled state, and visual variants.
+The `Button` component is designed for various user interface interactions. It offers customization options for labels, disabled state, and visual variants.
 
 ### Usage
 
@@ -102,3 +102,95 @@ function MyComponent() {
   );
 }
 ```
+
+## <a name="select"></a>Single & Multi Select Component
+
+The `Select` component provides a customizable dropdown select input that allows users to choose from a list of options.
+
+### Usage
+
+#### Props
+
+| Prop         | Type                                      | Default             | Description                                      |
+| ------------ | ----------------------------------------- | ------------------- | ------------------------------------------------ |
+| `maxWidth`      | `string`                                  | N/A                 | Sets the maximum width of the select container.        |
+| `options`      | `SelectOption[]`                                  | N/A                 | An array of options to populate the select dropdown.|
+| `multiple`      | `boolean`                                  | `false`              | Indicates whether multiple options can be selected.|
+| `selectedOption`      | `SelectOption or SelectOption[]`                                  | `undefined`              | The currently selected option(s) in the select dropdown.|
+| `onChange`      | `(selectedOption?: SelectOption`               | `SelectOption[]) => void`              | N/A |
+
+</br>
+
+#### Example 1: Single Select
+
+This example demonstrates a single select configuration.
+<div align="center"><img src="https://github.com/chilucdiep/component-library/blob/main/public/SingleSelect.gif" width="50%"></div>
+
+*Code Example:*
+```jsx
+import React, { useState } from 'react';
+import { Select } from 'your-component-library';
+
+function SingleSelectExample() {
+  const options = [
+    { label: 'Option 1', value: 'option1' },
+    { label: 'Option 2', value: 'option2' },
+    { label: 'Option 3', value: 'option3' },
+  ];
+
+  const [selectedOption, setSelectedOption] = useState(options[0]);
+
+  const handleSelectChange = (newOption) => {
+    setSelectedOption(newOption);
+  };
+
+  return (
+    <Select
+      maxWidth="400px"
+      options={options}
+      selectedOption={selectedOption}
+      onChange={handleSelectChange}
+    />
+  );
+}
+```
+
+</br>
+
+#### Example 1: Multiple Select
+
+This example demonstrates a multiple select configuration.
+
+<div align="center"><img src="https://github.com/chilucdiep/component-library/blob/main/public/MultiSelect.gif" width="50%"></div>
+
+*Code Example:*
+```jsx
+import React, { useState } from 'react';
+import { Select } from 'your-component-library';
+
+function MultipleSelectExample() {
+  const options = [
+    { label: 'Option 1', value: 'option1' },
+    { label: 'Option 2', value: 'option2' },
+    { label: 'Option 3', value: 'option3' },
+  ];
+
+  const [selectedOptions, setSelectedOptions] = useState([options[0]]);
+
+  const handleSelectChange = (newOptions) => {
+    setSelectedOptions(newOptions);
+  };
+
+  return (
+    <Select
+      maxWidth="400px"
+      multiple
+      options={options}
+      selectedOption={selectedOptions}
+      onChange={handleSelectChange}
+    />
+  );
+}
+```
+
+</br>
