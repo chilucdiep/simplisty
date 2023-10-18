@@ -34,7 +34,7 @@ The `Button` component is designed for various user interface interactions. It o
 | `label`      | `string`                                  | N/A                 | The label text to display on the button.        |
 | `disabled`   | `boolean`                                 | `false`             | Determines if the button is disabled.           |
 | `variant`    | `"primary"` or `"secondary"`              | `"secondary"`       | Sets the visual variant of the button.           |
-| `onClick`    | `(e: React.MouseEvent) => void` (optional) | N/A                 | A callback function to handle button clicks.     |
+| `onClick`    | `(e: React.MouseEvent) => void` | N/A                 | A callback function to handle button clicks.     |
 
 </br>
 
@@ -102,6 +102,7 @@ function MyComponent() {
   );
 }
 ```
+</br>
 
 ## <a name="select"></a>Single & Multi Select Component
 
@@ -194,3 +195,131 @@ function MultipleSelectExample() {
 ```
 
 </br>
+
+## <a name="card"></a>Card Component
+
+The `Card` component allows you to create customizable cards with a title, subtitle, and content. It's suitable for displaying information in a structured manner.
+
+### Usage
+
+#### Props
+
+| Prop         | Type                                      | Default             | Description                                      |
+| ------------ | ----------------------------------------- | ------------------- | ------------------------------------------------ |
+| `title`      | `string`                                  | N/A                 | The title of the card.|
+| `subtitle`   | `string`                                 | N/A             | An optional subtitle for the card.|
+| `maxWidth`    | `string`              |  N/A        | Sets the maximum width of the card.|
+| `side`    | `React.ReactNode` | N/A                 | An optional React node to display on the side of the card.|
+| `children`    | `React.ReactNode` | N/A                 | The content to be displayed in the card.|
+
+</br>
+
+#### Example: Card
+
+This example demonstrates a basic card with a title, subtitle, side content and content.
+
+<div align="center"><img src="https://github.com/chilucdiep/component-library/blob/main/public/Counter.gif" width="50%"></div>
+<img width="50% alt="Card" src="https://github.com/chilucdiep/simplisty/assets/43826291/1c46bd6f-8487-49f0-95c5-be44a145e636">
+
+*Code Example:*
+
+```jsx
+iimport React from 'react';
+import { Card } from 'your-component-library';
+
+function CardExample() {
+  return (
+    <Card title="Sample Card">
+      <p>This is the content of the card.</p>
+    </Card>
+    <Card
+      title="Card title"
+      subtitle="Issa subtitle"
+      maxWidth="500px"
+      side={
+        <>
+          <Button label="Button" variant="primary" />
+          <Button label="Button disabled" disabled={true} variant="primary" />
+        </>
+      }
+    >
+      <p>Content text</p>
+    </Card>
+  );
+}
+```
+</br>
+
+## <a name="counter"></a>Counter Component
+
+The `Counter` component allows you to display and manage a numeric counter with increment, decrement, and disable functionality.
+
+### Usage
+
+#### Props
+
+| Prop         | Type                                      | Default             | Description                                      |
+| ------------ | ----------------------------------------- | ------------------- | ------------------------------------------------ |
+| `counter`      | `number`                                  | N/A                 | The current counter value.        |
+| `isDisabled`   | `boolean`                                 | `false`             | Indicates whether the counter buttons are disabled.   |
+| `setCounter`    | `Dispatch<SetStateAction<number>>`              |  N/A        | A function to set the counter value.   |
+| `setisDisabled`    | `Dispatch<SetStateAction<boolean>>` | N/A                 | A function to toggle the disabled state.    |
+
+</br>
+
+#### Example 1: Default Counter
+
+This example demonstrates a basic counter with no additional props.
+
+<div align="center"><img src="https://github.com/chilucdiep/component-library/blob/main/public/Counter.gif" width="50%"></div>
+
+*Code Example:*
+
+```jsx
+import React, { useState } from 'react';
+import { Counter } from 'your-component-library';
+
+function BasicCounterExample() {
+  const [counter, setCounter] = useState(0);
+  const [isDisabled, setisDisabled] = useState(false);
+
+  return (
+    <Counter
+      counter={counter}
+      isDisabled={isDisabled}
+      setCounter={setCounter}
+      setisDisabled={setisDisabled}
+    />
+  );
+}
+```
+</br>
+
+#### Example 2: Disabled Counter
+
+This example demonstrates a disabled counter.
+
+<div align="center"><img src="https://github.com/chilucdiep/component-library/blob/main/public/Counter.gif" width="50%"></div>
+
+*Code Example:*
+
+```jsx
+import React, { useState } from 'react';
+import { Counter } from 'your-component-library';
+
+function DisabledCounterExample() {
+  const [counter, setCounter] = useState(10);
+  const [isDisabled, setisDisabled] = useState(true);
+
+  return (
+    <Counter
+      counter={counter}
+      isDisabled={isDisabled}
+      setCounter={setCounter}
+      setisDisabled={setisDisabled}
+    />
+  );
+}
+```
+</br>
+
