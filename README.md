@@ -218,8 +218,7 @@ The `Card` component allows you to create customizable cards with a title, subti
 
 This example demonstrates a basic card with a title, subtitle, side content and content.
 
-<div align="center"><img src="https://github.com/chilucdiep/component-library/blob/main/public/Counter.gif" width="50%"></div>
-<img width="50% alt="Card" src="https://github.com/chilucdiep/simplisty/assets/43826291/1c46bd6f-8487-49f0-95c5-be44a145e636">
+<div align="center"><img width="50% alt="Card" src="https://github.com/chilucdiep/simplisty/assets/43826291/1c46bd6f-8487-49f0-95c5-be44a145e636"></div>
 
 *Code Example:*
 
