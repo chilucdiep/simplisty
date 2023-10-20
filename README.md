@@ -8,9 +8,9 @@ Simplisty is a small React component library with various reusable components. I
 To install this library, you can use npm or yarn.
 
 ```bash
-npm install simplisty
+npm install simplisty-library
 # or
-yarn add simplisty
+yarn add simplisty-library
 ```
 
 # Components
